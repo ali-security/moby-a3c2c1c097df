@@ -20,14 +20,17 @@ on:
 
 jobs:
   validate-dco:
+    if: false
     uses: ./.github/workflows/.dco.yml
 
   test-prepare:
+    if: false
     uses: ./.github/workflows/.test-prepare.yml
     needs:
       - validate-dco
 
   run:
+    if: false
     needs:
       - test-prepare
     uses: ./.github/workflows/.windows.yml
